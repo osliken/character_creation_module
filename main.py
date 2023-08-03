@@ -48,7 +48,7 @@ def start_training(char_name: str, char_class: str) -> str:
           ' defence — чтобы блокировать атаку противника или special'
           ' — чтобы использовать свою суперсилу.')
     print('Если не хочешь тренироваться, введи команду skip.')
-    cmd: str = None
+    cmd: str = ''
     while cmd != 'skip':
         cmd = input('Введи команду: ')
         if cmd == 'attack':
@@ -77,13 +77,13 @@ def choice_char_class() -> str:
         if char_class == 'healer':
             print('Лекарь — могущественный заклинатель. '
                   'Черпает силы из природы, веры и духов.')
-        approve_choice: str = input('Нажми (Y), чтобы подтвердить выбор,'
-                                    ' или любую другую кнопку,'
-                                    ' чтобы выбрать другого персонажа').lower()
+        approve_choice = input('Нажми (Y), чтобы подтвердить выбор,'
+                               ' или любую другую кнопку,'
+                               ' чтобы выбрать другого персонажа').lower()
     return char_class
 
 
-def main():
+def main() -> None:
     print('Приветствую тебя, искатель приключений!')
     print('Прежде чем начать игру...')
     char_name: str = input('...назови себя: ')
